@@ -1,15 +1,15 @@
 # blimlist
 
-BlimList 📝
+BlimList 📝:
 O BlimList é um ecossistema Full Stack de gerenciamento de tarefas, desenvolvido para demonstrar práticas modernas de engenharia de software, desde a arquitetura do código até a orquestração em nuvem. O projeto utiliza o prefixo do sobrenome Blimbliem como marca de autoria e qualidade.
 
-🚀 O Projeto
+🚀 O Projeto: 
 O objetivo do BlimList é oferecer uma ferramenta de produtividade resiliente e escalável. Diferente de uma "To-Do List" comum, este projeto foi construído focando em separação de preocupações e independência de infraestrutura, permitindo que o sistema cresça e mude sem afetar o núcleo das regras de negócio.
 
 🛠️ Tecnologias e Arquitetura
 O projeto é dividido em três pilares principais:
 
-1. Back-end (O Coração)
+1. Back-end 
 Linguagem: Java 21+
 
 Framework: Spring Boot 3
@@ -43,15 +43,6 @@ Orquestração: Kubernetes (para gerenciamento de réplicas, escalabilidade e di
 
 Ambiente Local: Docker Compose e Minikube.
 
-🏗️ Estrutura de Pastas 
-
-Plaintext
-blimlist/
-├── backend/           # Código Java (Spring Boot)
-├── frontend/          # Código React/Web
-├── k8s/               # Manifestos do Kubernetes (YAMLs)
-├── docker-compose.yml # Orquestração local de desenvolvimento
-└── README.md
 🎯 Objetivos de Aprendizado
 Ao desenvolver o BlimList, os seguintes conceitos são aplicados:
 
