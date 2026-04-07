@@ -1,58 +1,58 @@
-# blimlist
+# 📝 BlimList
 
-BlimList 📝:
-O BlimList é um ecossistema Full Stack de gerenciamento de tarefas, desenvolvido para demonstrar práticas modernas de engenharia de software, desde a arquitetura do código até a orquestração em nuvem. O projeto utiliza o prefixo do sobrenome Blimbliem como marca de autoria e qualidade.
+O **BlimList** é um ecossistema Full Stack de gerenciamento de tarefas (To-Do List), desenvolvido para demonstrar práticas modernas de engenharia de software, desde a arquitetura do código até a orquestração em nuvem. O projeto utiliza o prefixo do sobrenome **Blimbliem** como marca de autoria e qualidade.
 
-🚀 O Projeto: 
-O objetivo do BlimList é oferecer uma ferramenta de produtividade resiliente e escalável. Diferente de uma "To-Do List" comum, este projeto foi construído focando em separação de preocupações e independência de infraestrutura, permitindo que o sistema cresça e mude sem afetar o núcleo das regras de negócio.
+---
 
-🛠️ Tecnologias e Arquitetura
-O projeto é dividido em três pilares principais:
+## 🏗️ O que foi realizado (Fase 1: Core & Backend)
 
-1. Back-end 
-Linguagem: Java 21+
+Nesta primeira etapa, o foco foi construir uma fundação sólida seguindo os princípios de robustez e isolamento.
 
-Framework: Spring Boot 3
+### **1. Arquitetura Limpa (Clean Architecture)**
+O projeto segue o padrão de camadas para garantir o desacoplamento e a facilidade de manutenção:
+* **Domínio**: Entidade `Task` com lógica de negócio pura (ID, Title, Description, Status).
+* **Aplicação**: Casos de uso isolados (`CreateTaskUseCase`) e definição de portas de saída (`TaskRepository`).
+* **Infraestrutura**: Adaptadores Web (REST Controller) e de Persistência (JPA/PostgreSQL).
 
-Padrão Arquitetônico: Clean Architecture (Arquitetura Limpa).
+### **2. Stack Tecnológica**
+* **Linguagem**: Java 21.
+* **Framework**: Spring Boot 3.
+* **Banco de Dados**: PostgreSQL 15.
+* **Ferramentas**: Maven, Lombok e JPA/Hibernate.
 
-Domínio: Entidades puras e regras de negócio.
+### **3. Containerização com Docker**
+* **Dockerfile**: Empacotamento da aplicação Java em uma imagem leve e segura.
+* **Docker Compose**: Orquestração local do Backend e Banco de Dados, garantindo que o sistema funcione da mesma forma em qualquer máquina.
 
-Aplicação: Casos de uso isolados.
+---
 
-Infraestrutura: Adaptadores para Web (REST) e Persistência.
+## 🚀 O que está por vir (Roadmap)
 
-Gerenciador de Dependências: Maven
+O BlimList é um projeto vivo e continuará evoluindo com as seguintes metas:
 
-2. Front-end (A Experiência)
-Framework: React (ou sua escolha como Angular/Vue)
+### **Fase 2: Expansão do Backend (CRUD)**
+* Finalização das operações de **Listagem**, **Atualização** e **Exclusão** de tarefas.
 
-Estilização: Tailwind CSS (para uma interface moderna e responsiva).
+### **Fase 3: Interface Visual (Front-end) 💻**
+* Desenvolvimento de uma Single Page Application (SPA) utilizando **React**.
+* Estilização moderna e responsiva com **Tailwind CSS**.
 
-Comunicação: Axios para consumo da API REST.
+### **Fase 4: Orquestração em Nuvem (Kubernetes)**
+* Implementação de manifestos para implantação em clusters **Kubernetes**, focando em escalabilidade e auto-recuperação.
 
-3. Banco de Dados (A Memória)
-Principal: PostgreSQL (Banco de dados relacional robusto para garantir a integridade dos dados).
+---
 
-Persistência: Spring Data JPA / Hibernate.
+## 🛠️ Como rodar o projeto
 
-4. DevOps & Infraestrutura (A Operação)
-Containerização: Docker (para garantir que o sistema rode da mesma forma em qualquer máquina).
+### **1. Configuração de Segurança (.env)**
+Por boas práticas de segurança, este repositório não armazena senhas. Antes de iniciar, crie um arquivo chamado `.env` na raiz do projeto com o seguinte conteúdo:
 
-Orquestração: Kubernetes (para gerenciamento de réplicas, escalabilidade e disponibilidade).
+```text
+DB_USER=postgres
+DB_PASSWORD=sua_senha_aqui
+DB_NAME=blimlist
 
-Ambiente Local: Docker Compose e Minikube.
+Para subir o ambiente completo (Backend + Banco de Dados), execute o comando abaixo na raiz do diretório:
 
-🎯 Objetivos de Aprendizado
-Ao desenvolver o BlimList, os seguintes conceitos são aplicados:
-
-SOLID: Princípios de design de software orientado a objetos.
-
-DRY (Don't Repeat Yourself): Código limpo e reutilizável.
-
-Portabilidade: Aplicação "empacotada" que não depende da instalação manual de bancos ou JRE no host.
-
-Escalabilidade: Configuração de clusters para aguentar alta carga.
-
-📋 Como rodar (Em breve)
-(Aqui será adiconado os comandos do Docker e Kubernetes conforme o projeto avança)
+```bash
+docker compose up --build
